@@ -4,9 +4,9 @@ services:
     container_name: app
     working_dir: /app
     volumes:
-      - .:/app             # Mount current folder into /app
-      - go-mod-cache:/go/pkg/mod   # Cache dependencies
-    command: /bin/sh        # Start a shell by default
+      - .:/app            
+      - go-mod-cache:/go/pkg/mod
+    command: /bin/sh        
     tty: true
     stdin_open: true
     environment:

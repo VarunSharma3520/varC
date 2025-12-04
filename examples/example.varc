@@ -1,28 +1,3 @@
-# ✅ ULTIMATE varC TOKEN STRESS TEST
-
-Perfect — you want a “maximal token coverage” varC+C file such that:
-
-✅ If this file tokenizes correctly, your tokenizer is essentially complete.
-
-Below is a single self-contained stress-test file that exercises:
-
-✅ All 7 varC keywords
-✅ All C keywords (most of them)
-✅ All operators (++ -- -> .* << >> && || ?:, etc.)
-✅ All literals (int, hex, float, char, string, escape sequences)
-✅ All comment styles
-✅ All punctuation (; , () {} [])
-✅ All declarator forms (pointers, arrays, functions)
-✅ All control flow
-✅ unsafe {} blocks
-✅ move(expr)
-✅ opt, raw
-✅ Structs, enums, typedefs, casts
-✅ Preprocessor macros
-✅ Edge-case whitespace
-
-```c
-
 /* -------- PREPROCESSOR -------- */
 
 #define MACRO(x,y) ((x) + (y))
@@ -198,28 +173,4 @@ int main(int argc, char** argv) {
 /* -------- COMMENT FOR LEXER -------- */
 
 // single line comment
-```
 
-# ✅ HOW TO USE THIS FILE
-Step 1 — Run only the tokenizer:
-
-Your output should produce a long flat token stream with:
-
-No UNKNOWN tokens
-
-No dropped characters
-
-No misclassified keywords as identifiers
-
-Step 2 — Smoke-test expectations:
-
-If any of these fail, your tokenizer is incomplete:
-
-| Failure                                   | Meaning               |
-| ----------------------------------------- | --------------------- |
-| `borrow_mut` split into `borrow` + `_mut` | Identifier rule bug   |
-| `move(` parsed as IDENT                   | Keyword table bug     |
-| `0xDEADBEEF` broken                       | Hex literal bug       |
-| `"escape: \t"` broken                     | String escape bug     |
-| `>>=` broken into `>>` + `=`              | Multi-op priority bug |
-| `//` not ignored                          | Comment handling bug  |
