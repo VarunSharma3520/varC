@@ -1,4 +1,4 @@
-package lexer
+package lexer_test
 
 import (
 	"github.com/VarunSharma3520/varC/internal/lexer"

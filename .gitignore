@@ -1,4 +1,4 @@
-build/*
+build/varC
 
 # Binaries for programs and plugins
 *.exe
