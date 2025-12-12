@@ -10,16 +10,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-/* -------- ALL varC KEYWORDS -------- */
-
-owner
-borrow
-borrow_mut
-move
-unsafe
-opt
-raw
-
 /* -------- ALL MAJOR C KEYWORDS -------- */
 
 typedef struct S S;

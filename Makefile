@@ -5,6 +5,9 @@ build:
 dev: build
 	./build/varC --file ./examples/example.varc
 
+clean:
+	rm  ./build/varC
+
 lexer_test: build
 	go test -v ./test/lexer_test.go 
 
